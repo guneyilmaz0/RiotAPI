@@ -1,5 +1,7 @@
 package net.swade.riot.api;
 
+import lombok.Getter;
+
 public enum ResponseCode {
     BAD_REQUEST(400, "Bad request"),
     UNAUTHORIZED(401, "Unauthorized"),
@@ -14,20 +16,12 @@ public enum ResponseCode {
     GATEWAY_TIMEOUT(504, "Gateway timeout"),
     NOT_DEFINED_ERROR_CODE(0, "Not defined error code.");
 
-    private final int code;
-    private final String message;
+    @Getter private final int code;
+    @Getter private final String message;
 
     ResponseCode(int code, String message) {
         this.code = code;
         this.message = message;
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public String getMessage() {
-        return message;
     }
 
     public static ResponseCode getByCode(int code) {
