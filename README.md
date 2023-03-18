@@ -2,12 +2,14 @@
 <img src="https://user-images.githubusercontent.com/63880117/226095441-175f1c45-ffaa-456a-b486-128deec3a8be.png" height="64" width="64" align="left" alt="">
 </h1>
 
- - Description
+DESCRIPTION
+-------------
  
  Simple to use Riot Games API
  
  
- - Add as dependency
+ADD AS DEPENDENCY
+-------------
  
  ```xml
         <repository>
@@ -24,14 +26,16 @@
      </dependency>
 ````
 
-- Calling API
+CALLING API
+-------------
 
 ```java
 //https://developer.riotgames.com/
-RiotAPI riotAPI = RiotAPIBuilder.create("YOUR_API_KEY_HERE");
+RiotAPI riotAPI = RiotAPIBuilder.create("YOUR_API_KEY_HERE", Region.YOUR_REGION, Server.YOUR_SERVER);
 ```
 
-- Examples
+EXAMPLES
+-------------
 
 ```java
 RiotAPI riotAPI = RiotAPIBuilder.create("YOUR_API_KEY_HERE");
@@ -39,6 +43,13 @@ Summoner summoner = riotAPI.getSummonerByName("summoner_name");
 System.out.println(summoner.getProfileIconId());
 ```
 
-- NOTICE
- For now, it only works for Turkey servers
- sorry :(
+RELEASES
+-------------
+- 1.0-beta
+
+```
+Region and server selection added.
+```
+```java
+RiotAPI riotAPI = RiotAPIBuilder.create(Settings.RIOT_API_KEY, Region.EUROPE, Server.TR1);
+```
