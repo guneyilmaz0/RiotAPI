@@ -21,7 +21,7 @@
             <groupId>com.github.GuneyYilmaz0</groupId>
             <artifactId>RiotAPI</artifactId>
             <version>VERSION</version>
-        </dependency>
+     </dependency>
 ````
 
 - Calling API
