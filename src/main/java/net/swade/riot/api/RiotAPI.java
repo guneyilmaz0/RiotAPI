@@ -26,7 +26,7 @@ public class RiotAPI {
 
     @SneakyThrows
     public Summoner getSummonerByName(String name) {
-        URL url = new URL(Settings.BASE_URL + SERVER + Settings.SUMMONER_URL + name + "?api_key=" + API_KEY);
+        URL url = new URL(Settings.BASE_URL + SERVER.getServerCode() + Settings.SUMMONER_URL + name + "?api_key=" + API_KEY);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
 
@@ -51,7 +51,7 @@ public class RiotAPI {
 
     @SneakyThrows
     public JsonArray getMatchIdsByPUUID(String puuid) {
-        URL url = new URL(Settings.BASE_URL + REGION + Settings.MATCH_IDS_URL + puuid + "/ids?start=0&count=20&api_key=" + API_KEY);
+        URL url = new URL(Settings.BASE_URL + REGION.getRegionCode() + Settings.MATCH_IDS_URL + puuid + "/ids?start=0&count=20&api_key=" + API_KEY);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
 
@@ -73,7 +73,7 @@ public class RiotAPI {
 
     @SneakyThrows
     public Match getMatchById(String matchId) {
-        URL url = new URL(Settings.BASE_URL + REGION + Settings.MATCH_URL + matchId + "?api_key=" + API_KEY);
+        URL url = new URL(Settings.BASE_URL + REGION.getRegionCode() + Settings.MATCH_URL + matchId + "?api_key=" + API_KEY);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
 
