@@ -1,6 +1,7 @@
-package net.swade.riot.api;
+package net.swade.riot.api.enums;
 
 import lombok.Getter;
+import net.swade.riot.api.RiotAPI;
 
 import java.util.Objects;
 
@@ -38,5 +39,8 @@ public enum Server {
             }
         }
         return NULL;
+    }
+
+    public void a(){;
     }
 }

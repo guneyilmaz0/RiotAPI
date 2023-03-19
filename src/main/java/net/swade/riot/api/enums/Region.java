@@ -1,4 +1,4 @@
-package net.swade.riot.api;
+package net.swade.riot.api.enums;
 
 import lombok.Getter;
 

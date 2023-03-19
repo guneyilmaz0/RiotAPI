@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>net.swade.riot.api</groupId>
   <artifactId>RiotAPI</artifactId>
-  <version>1.0-beta</version>
+  <version>1.1-BETA</version>
   <build>
     <plugins>
       <plugin>

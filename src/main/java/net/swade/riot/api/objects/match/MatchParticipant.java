@@ -1,4 +1,4 @@
-package net.swade.riot.api.objects;
+package net.swade.riot.api.objects.match;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

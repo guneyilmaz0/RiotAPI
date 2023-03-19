@@ -1,7 +1,8 @@
-package net.swade.riot.api.objects;
+package net.swade.riot.api.objects.match;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import net.swade.riot.api.objects.match.MatchObjective;
 
 @AllArgsConstructor
 public class MatchObjectives {

@@ -1,7 +1,9 @@
-package net.swade.riot.api.objects;
+package net.swade.riot.api.objects.match;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import net.swade.riot.api.objects.match.MatchBan;
+import net.swade.riot.api.objects.match.MatchObjectives;
 
 import java.util.List;
 

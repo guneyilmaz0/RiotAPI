@@ -6,23 +6,17 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import lombok.Getter;
 import lombok.SneakyThrows;
-import net.swade.riot.api.objects.Match;
+import net.swade.riot.api.enums.Region;
+import net.swade.riot.api.enums.ResponseCode;
+import net.swade.riot.api.enums.Server;
+import net.swade.riot.api.objects.match.Match;
 import net.swade.riot.api.objects.Summoner;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Scanner;
 
-public class RiotAPI {
-    @Getter private final String API_KEY;
-    @Getter private final Region REGION;
-    @Getter private final Server SERVER;
-
-    public RiotAPI(String apiKey, Region region, Server server) {
-        API_KEY = apiKey;
-        REGION = region;
-        SERVER = server;
-    }
+public record RiotAPI(@Getter String API_KEY, @Getter Region REGION, @Getter Server SERVER) {
 
     @SneakyThrows
     public Summoner getSummonerByName(String name) {
@@ -44,7 +38,7 @@ public class RiotAPI {
         return new Gson().fromJson(JsonParser.parseString(responseBody.toString()), Summoner.class);
     }
 
-    public JsonArray getMatchIdsBySummonerName(String name){
+    public JsonArray getMatchIdsBySummonerName(String name) {
         Summoner summoner = getSummonerByName(name);
         return getMatchIdsByPUUID(summoner.getPuuid());
     }
@@ -92,7 +86,7 @@ public class RiotAPI {
         return new Gson().fromJson(JsonParser.parseString(responseBody.toString()), Match.class);
     }
 
-    public Match getLastMatchBySummonerName(String name){
+    public Match getLastMatchBySummonerName(String name) {
         String lastMatchId = getMatchIdsBySummonerName(name).get(0).getAsString();
         return getMatchById(lastMatchId);
     }
