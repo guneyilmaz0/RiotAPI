@@ -31,14 +31,14 @@ CALLING API
 
 ```java
 //https://developer.riotgames.com/
-RiotAPI riotAPI = RiotAPIBuilder.create("YOUR_API_KEY_HERE", Region.YOUR_REGION, Server.YOUR_SERVER);
+RiotAPI riotAPI = new RiotAPI("YOUR_API_KEY_HERE", Region.YOUR_REGION, Server.YOUR_SERVER)
 ```
 
 EXAMPLES
 -------------
 
 ```java
-RiotAPI riotAPI = RiotAPIBuilder.create("YOUR_API_KEY_HERE");
+RiotAPI riotAPI = new RiotAPI("YOUR_API_KEY_HERE", Region.YOUR_REGION, Server.YOUR_SERVER);
 Summoner summoner = riotAPI.getSummonerByName("summoner_name");
 System.out.println(summoner.getProfileIconId());
 ```
@@ -51,5 +51,14 @@ RELEASES
 Region and server selection added.
 ```
 ```java
-RiotAPI riotAPI = RiotAPIBuilder.create(Settings.RIOT_API_KEY, Region.EUROPE, Server.TR1);
+RiotAPI riotAPI = RiotAPIBuilder.create("YOUR_API_KEY_HERE", Region.EUROPE, Server.TR1);
+```
+
+- 1.1-BETA
+
+```
+Some improvements & changes.
+```
+```java
+RiotAPI riotAPI = new RiotAPI("YOUR_API_KEY_HERE", Region.YOUR_REGION, Server.YOUR_SERVER);
 ```
