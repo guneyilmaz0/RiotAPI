@@ -101,18 +101,22 @@ public record RiotAPI(@Getter String API_KEY, @Getter Region REGION, @Getter Ser
         return getMatchById(lastMatchId);
     }
 
-    public int[] getKDA(Match match, Summoner summoner){
-        MatchParticipant player = null;
+    public MatchParticipant getParticipantByMatch(Match match, Summoner summoner){
         for (MatchParticipant participant : match.getInfo().getParticipants()) {
             if (participant.getPuuid().equalsIgnoreCase(summoner.getPuuid())){
-                player = participant;
-                break;
+                return participant;
             }
         }
 
-        if (player == null){
+        return null;
+    }
+
+    public int[] getKDA(Match match, Summoner summoner){
+        MatchParticipant participant = getParticipantByMatch(match, summoner);
+        if (participant == null){
             throw new RuntimeException("This summoner was not found in this match.");
         }
-        return new int[]{player.getKills(), player.getDeaths(), player.getAssists()};
+
+        return new int[]{participant.getKills(), participant.getDeaths(), participant.getAssists()};
     }
 }

@@ -1,9 +1,6 @@
 package net.swade.riot.api.enums;
 
 import lombok.Getter;
-import net.swade.riot.api.RiotAPI;
-
-import java.util.Objects;
 
 public enum Server {
     BR1("br1", "Brazil"),
@@ -21,8 +18,7 @@ public enum Server {
     TH2("th2", "Thailand"),
     TR1("tr1", "Turkey"),
     TW2("tw2", "Taiwan, Hong Kong, and Macao"),
-    VN2("vn2", "Vietnam"),
-    NULL("null", "null");
+    VN2("vn2", "Vietnam");
 
     @Getter private final String serverCode;
     @Getter private final String name;
@@ -30,17 +26,5 @@ public enum Server {
     Server(String serverCode, String name) {
         this.serverCode = serverCode;
         this.name = name;
-    }
-
-    public static Server getByServerCode(String serverCode) {
-        for (Server server : values()) {
-            if (Objects.equals(server.getServerCode(), serverCode)) {
-                return server;
-            }
-        }
-        return NULL;
-    }
-
-    public void a(){;
     }
 }
