@@ -11,6 +11,7 @@ import net.swade.riot.api.enums.ResponseCode;
 import net.swade.riot.api.enums.Server;
 import net.swade.riot.api.objects.match.Match;
 import net.swade.riot.api.objects.Summoner;
+import net.swade.riot.api.objects.match.MatchParticipant;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -40,6 +41,10 @@ public record RiotAPI(@Getter String API_KEY, @Getter Region REGION, @Getter Ser
 
     public JsonArray getMatchIdsBySummonerName(String name) {
         Summoner summoner = getSummonerByName(name);
+        return getMatchIdsByPUUID(summoner.getPuuid());
+    }
+
+    public JsonArray getMatchIdsBySummoner(Summoner summoner) {
         return getMatchIdsByPUUID(summoner.getPuuid());
     }
 
@@ -89,5 +94,25 @@ public record RiotAPI(@Getter String API_KEY, @Getter Region REGION, @Getter Ser
     public Match getLastMatchBySummonerName(String name) {
         String lastMatchId = getMatchIdsBySummonerName(name).get(0).getAsString();
         return getMatchById(lastMatchId);
+    }
+
+    public Match getLastMatchBySummoner(Summoner summoner) {
+        String lastMatchId = getMatchIdsByPUUID(summoner.getPuuid()).get(0).getAsString();
+        return getMatchById(lastMatchId);
+    }
+
+    public int[] getKDA(Match match, Summoner summoner){
+        MatchParticipant player = null;
+        for (MatchParticipant participant : match.getInfo().getParticipants()) {
+            if (participant.getPuuid().equalsIgnoreCase(summoner.getPuuid())){
+                player = participant;
+                break;
+            }
+        }
+
+        if (player == null){
+            throw new RuntimeException("This summoner was not found in this match.");
+        }
+        return new int[]{player.getKills(), player.getDeaths(), player.getAssists()};
     }
 }
