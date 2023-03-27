@@ -67,7 +67,9 @@ RiotAPI riotAPI = new RiotAPI("YOUR_API_KEY_HERE", Region.YOUR_REGION, Server.YO
 
 ```
 New RiotAPIUtils class
-You can perform operations such as obtaining champion assets, learning the latest version of League of Legends, and retrieving champion information using this class.
+You can perform operations such as obtaining champion assets,
+learning the latest version of League of Legends,
+and retrieving champion information using this class.
 
 Several functions that provide convenience have been added.
 ```
