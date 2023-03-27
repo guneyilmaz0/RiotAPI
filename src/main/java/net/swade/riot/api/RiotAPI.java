@@ -107,7 +107,6 @@ public record RiotAPI(@Getter String API_KEY, @Getter Region REGION, @Getter Ser
                 return participant;
             }
         }
-
         return null;
     }
 

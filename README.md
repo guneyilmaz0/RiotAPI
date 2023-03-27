@@ -75,3 +75,14 @@ Several functions that provide convenience have been added.
 Champion champion = RiotAPIUtils.getChampionByName("Olaf", Language.EN_US);
 System.out.println(champion.getBlurb());
 ```
+
+- 1.3-BETA
+
+```
+New getItemAsset & getProfileIconById functions
+```
+```java
+System.out.println(RiotAPIUtils.getItemAsset(participant.getItem0()));
+System.out.println(RiotAPIUtils.getProfileIconById(summoner.getProfileIconId()));
+```
+
