@@ -78,8 +78,6 @@ public class RiotAPIUtils {
         return new Gson().fromJson(JsonParser.parseString(responseBody.toString()).getAsJsonObject().get("data").getAsJsonObject().get(championName), Champion.class);
     }
 
-
-    //TODO MAKE MORE LIKELY README.MD FILE EXAMPLES etc.
     public static String getItemAsset(int itemId){
         return "http://ddragon.leagueoflegends.com/cdn/" + getLatestLOLVersion() + "/img/item/" + itemId + ".png";
     }
