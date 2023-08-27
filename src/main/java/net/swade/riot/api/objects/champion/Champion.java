@@ -2,20 +2,26 @@ package net.swade.riot.api.objects.champion;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-
 import java.util.List;
 
+@Getter
 @AllArgsConstructor
 public class Champion {
-    @Getter private String version;
-    @Getter private String id;
-    @Getter private String key;
-    @Getter private String name;
-    @Getter private String title;
-    @Getter private String blurb;
-    @Getter private ChampionInfo info;
-    @Getter private ChampionImage image;
-    @Getter private List<String> tags;
-    @Getter private String partype;
-    @Getter private ChampionStats stats;
+    private String id;
+    private String key;
+    private String name;
+    private String title;
+    private ChampionImage image;
+    private List<SkinData> skins;
+    private String lore;
+    private String blurb;
+    private List<String> allyTips;
+    private List<String> enemyTips;
+    private List<String> tags;
+    private String partype;
+    private ChampionInfo info;
+    private ChampionStats stats;
+    private List<ChampionSpell> spells;
+    private ChampionPassive passive;
+    private List<Object> recommended;
 }

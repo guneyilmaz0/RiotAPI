@@ -88,3 +88,9 @@ System.out.println(RiotAPIUtils.getItemAsset(participant.getItem0()));
 System.out.println(RiotAPIUtils.getProfileIconById(summoner.getProfileIconId()));
 ```
 
+- 1.3.1-BETA
+
+```
+Better champion data
+```
+

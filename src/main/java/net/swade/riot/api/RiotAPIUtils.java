@@ -60,7 +60,7 @@ public class RiotAPIUtils {
 
     @SneakyThrows
     public static Champion getChampionByName(String championName, Language language) {
-        URL url = new URL("https://ddragon.leagueoflegends.com/cdn/" + getLatestLOLVersion() + "/data/" + language.getLanguageCode() + "/champion.json");
+        URL url = new URL("https://ddragon.leagueoflegends.com/cdn/" + getLatestLOLVersion() + "/data/" + language.getLanguageCode() + "/champion/" + championName + ".json");
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
 
