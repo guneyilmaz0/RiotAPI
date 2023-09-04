@@ -1,7 +1,10 @@
 package net.swade.riot.api.enums;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+@Getter
+@AllArgsConstructor
 public enum Language {
     EN_US("en_US", "English (United States)"),
     CS_CZ("cs_CZ", "Czech"),
@@ -31,11 +34,6 @@ public enum Language {
     ZH_MY("zh_MY", "Chinese (Malaysia)"),
     ZH_TW("zh_TW", "Chinese (Taiwan)");
 
-    @Getter private final String languageCode;
-    @Getter private final String name;
-
-    Language(String languageCode, String name) {
-        this.languageCode = languageCode;
-        this.name = name;
-    }
+    private final String languageCode;
+    private final String name;
 }

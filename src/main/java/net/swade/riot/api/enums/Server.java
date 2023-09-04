@@ -1,7 +1,10 @@
 package net.swade.riot.api.enums;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+@Getter
+@AllArgsConstructor
 public enum Server {
     BR1("br1", "Brazil"),
     EUN1("eun1", "Europe Nordic & East"),
@@ -20,11 +23,6 @@ public enum Server {
     TW2("tw2", "Taiwan, Hong Kong, and Macao"),
     VN2("vn2", "Vietnam");
 
-    @Getter private final String serverCode;
-    @Getter private final String name;
-
-    Server(String serverCode, String name) {
-        this.serverCode = serverCode;
-        this.name = name;
-    }
+    private final String serverCode;
+    private final String name;
 }
