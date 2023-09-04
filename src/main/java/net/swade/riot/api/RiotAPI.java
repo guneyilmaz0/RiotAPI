@@ -9,8 +9,8 @@ import lombok.SneakyThrows;
 import net.swade.riot.api.enums.Region;
 import net.swade.riot.api.enums.ResponseCode;
 import net.swade.riot.api.enums.Server;
-import net.swade.riot.api.objects.match.Match;
 import net.swade.riot.api.objects.Summoner;
+import net.swade.riot.api.objects.match.Match;
 import net.swade.riot.api.objects.match.MatchParticipant;
 
 import java.net.HttpURLConnection;

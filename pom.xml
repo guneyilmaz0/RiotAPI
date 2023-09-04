@@ -6,7 +6,7 @@
 
     <groupId>net.swade.riot.api</groupId>
     <artifactId>RiotAPI</artifactId>
-    <version>1.3.2-BETA</version>
+    <version>1.3.3-BETA</version>
 
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
